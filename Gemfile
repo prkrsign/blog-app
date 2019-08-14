@@ -63,3 +63,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
 gem 'uikit-sass-rails'
+gem 'pry-rails'
+gem 'pry-byebug'
+gem 'pry-doc'
+gem 'kaminari'

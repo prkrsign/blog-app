@@ -1,0 +1,28 @@
+<html lang="ja" class>
+    <body class>
+        <div class="uk-offcanvas-content" style>
+                <div class="uk-section-xsmall uk-section-default uk-box-shadow-small uk-sticky uk-background-primary" uk-sticky="show-on-up: true; animation: uk-aimation-slide-top;">
+                <div class="uk-container uk-container-expand">
+                <nav class="uk-navbar-container uk-navbar-transparent uk-navbar" uk-navbar="">
+                    <div class="uk-navbar-left"><a href="#offcanvas-left" uk-toggle="" class="uk-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" ratio="1"> <rect x="6" y="4" width="12" height="1"></rect> <rect x="6" y="9" width="12" height="1"></rect> <rect x="6" y="14" width="12" height="1"></rect> <rect x="2" y="4" width="2" height="1"></rect> <rect x="2" y="9" width="2" height="1"></rect> <rect x="2" y="14" width="2" height="1"></rect></svg></a></div>
+                    <div class="uk-navbar-center"><a class="uk-navbar-item" href="/" method="GET">Blog App</a></div>
+                    <% if user_signed_in? %>
+                        <a class="uk-navbar-right  link-left" href="/articles/new" method="GET">New</a>
+                        <a class="uk-navbar-right  link-right" href="/users/sign_out" >Sign out</a>
+                    <% else %>
+                        <a class="uk-navbar-right  link-left" href="/users/sign_in" method="GET">Sign in</a>
+                        <a class="uk-navbar-right  link-right" href="/users/sign_up" method="GET">Sign up</a>
+                    <% end %>
+                </nav>
+            </div>
+        </div>
+
+        
+        <% @articles.each do |article| %>
+            <%= render partial: "form" , locals: { article: article } %>
+        <% end %>
+
+        <%= paginate(@articles) %>
+    </body>
+</html>
+
