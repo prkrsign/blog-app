@@ -1,0 +1,50 @@
+<html lang="ja" class>
+    <body class>
+        <div class="uk-offcanvas-content" style>
+            <div class="uk-section-xsmall uk-section-default uk-box-shadow-small uk-sticky uk-background-primary" uk-sticky="show-on-up: true; animation: uk-aimation-slide-top;">
+            <div class="uk-container uk-container-expand">
+            <nav class="uk-navbar-container uk-navbar-transparent uk-navbar" uk-navbar="">
+            <div class="uk-navbar-left"><a href="#offcanvas-left" uk-toggle="" class="uk-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" ratio="1"> <rect x="6" y="4" width="12" height="1"></rect> <rect x="6" y="9" width="12" height="1"></rect> <rect x="6" y="14" width="12" height="1"></rect> <rect x="2" y="4" width="2" height="1"></rect> <rect x="2" y="9" width="2" height="1"></rect> <rect x="2" y="14" width="2" height="1"></rect></svg></a></div>
+            <div class="uk-navbar-center"><a class="uk-navbar-item" href="/" method="GET">Blog App</a></div>
+          </nav>
+        </div>
+      </div>
+
+    <div class="col s12 m6 offset-m3">
+      <h5>Sign Up</h5>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true, maxlength: "6" , class: "uk-input" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email"  , class: "uk-input" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password" , class: "uk-input"%>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" , class: "uk-input"%>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up" , class: "uk-button uk-button-default"%>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+
+  </body>
+</html>
