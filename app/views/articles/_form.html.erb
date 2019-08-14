@@ -1,0 +1,15 @@
+            <div class="row">
+                <div class="window">
+                    <div class="uk-card uk-card-default">
+                        <div class="card-content">
+                        <%= article.text %>
+                        </div>
+                        <div class="card-action">
+                            <% if user_signed_in? && current_user.id == article.user_id %>
+                                <a class="uk-link-text"  href="#" method="#">edit</a>
+                                <a class="uk-link-text"  href="#" method="#">delete</a>
+                            <% end %>
+                        </div>
+                    </div>
+                </div>
+            </div>    

@@ -1,4 +1,9 @@
 class ArticlesController < ApplicationController
+    
+    def index
+        @articles = Article.includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    end
+
     def new
         @article = Article.new
     end
