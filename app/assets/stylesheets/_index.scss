@@ -7,3 +7,38 @@
 .link-right{
     color: white;
 }
+
+.row{
+    height: 144px;
+    width:  100%;
+    margin-bottom: 20px;
+
+    .window{
+        height: 144px;
+        width:  calc(100% - 700px);
+        margin-left: 350px;
+        // border: solid 1px red;
+
+        .uk-card{
+            margin-top: 10px;
+            margin-bottom: 10px;
+            height: 123px;
+
+            .card-content{
+                padding-top: 30px;
+                padding-bottom: 30px;
+                padding-left:  20px;
+                padding-right: 20px;
+                border-bottom: solid 1px #CCCCCC;
+            }
+
+            .card-action{
+                box-sizing: border-box;
+                padding-top: 5px;
+                padding-left:  20px;
+                padding-right: 20px;
+                padding-bottom: 10px;
+            }
+        }
+    }
+}
