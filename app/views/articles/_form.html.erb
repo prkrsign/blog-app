@@ -6,8 +6,8 @@
                         </div>
                         <div class="card-action">
                             <% if user_signed_in? && current_user.id == article.user_id %>
-                                <a class="uk-link-text"  href="#" method="#">edit</a>
-                                <a class="uk-link-text"  href="#" method="#">delete</a>
+                                <%= link_to "EDIT" , "/articles/#{article.id}/edit" , method: :get , class: 'uk-link-text'  %>
+                                <%= link_to "DELETE" , "/articles/#{article.id}" , method: :DELETE , class: 'uk-link-text'  %>
                             <% end %>
                         </div>
                     </div>
