@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
 
-    before_action :set_article , only: [ :edit , :update]
+    before_action :set_article , only: [ :edit , :update , :destroy]
     
     def index
         @articles = Article.includes(:user).page(params[:page]).per(5).order("created_at DESC")
@@ -24,7 +24,12 @@ class ArticlesController < ApplicationController
 
     def update
         @article.update(articles_params)
-        redirect_to root_path , notice: "更新しました"
+        redirect_to root_path
+    end
+
+    def destroy
+        @article.destroy
+        redirect_to root_path 
     end
 
     private
